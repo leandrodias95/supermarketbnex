@@ -37,7 +37,9 @@ public class ProductService {
 	public void updateProduct(Long id, Product productUpdate) {
 		repository.findById(id)
 		.map(product -> {
-			product.setId(productUpdate.getId());
+		    product.setName(productUpdate.getName());
+            product.setPrice(productUpdate.getPrice());
+            product.setDescription(productUpdate.getDescription());
 			repository.save(product); 
 			return product;
 		}).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found!"));

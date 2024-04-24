@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,13 +23,16 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(length = 150, nullable = true)
+	@Column(length = 150)
+	@NotEmpty(message = "{field.name.required}")
 	private String name;
 	
-	@Column(nullable = true)
+	@Column
+	@NotNull(message= "{field.price.required}")
 	private BigDecimal price;
 	
-	@Column(length = 150, nullable = true)
+	@Column(length = 150)
+	@NotEmpty(message = "{field.description.required}")
 	private String description;
 	
 }
