@@ -23,7 +23,7 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(length = 150)
+	@Column(length = 50)
 	@NotEmpty(message = "{field.name.required}")
 	private String name;
 	
@@ -31,7 +31,7 @@ public class Product {
 	@NotNull(message= "{field.price.required}")
 	private BigDecimal price;
 	
-	@Column(length = 150)
+	@Column(length = 500)
 	@NotEmpty(message = "{field.description.required}")
 	private String description;
 	
