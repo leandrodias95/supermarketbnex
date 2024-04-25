@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.supermarketbnex.model.entity.Product;
 import br.com.supermarketbnex.model.repository.ProductRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @Service
